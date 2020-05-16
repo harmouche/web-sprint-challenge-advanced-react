@@ -30,13 +30,59 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+It is similar to a function in that, it takes an input (props) and returns the output (react element). A stateful component is always a class component. It is created by extending the React. Component class. A stateful component is dependent on it's state object and can change it's own state.
+
+
 2. Describe the different phases of the component lifecycle.
+
+The Birth/Mounting Phase
+This is the phase when the component is being built out from the ground up. A few things are happening here: Whatever initial data you want access to will be defined on the constructor of this phase
+
+Your render method is invoked.
+componentDidMount gets called as well.
+Growth/Updating Phase
+In the Growth/Updating phase you’re updating compnent data.
+
+setState can be used to change the component’s state data, forcing a call to render.
+shouldComponentUpdate is a method one could use here to stop a component from calling render if necessary.
+Death/Un-mounting Phase
+Again, self-explanatory, but the unmounting phase includes removing the component from the screen.
+
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+
+Each component has several “lifecycle methods” that you can override to run code at particular times in the process.
+
+Mounting
+These methods are called in the following order when an instance of a component is being created and inserted into the DOM:
+constructor()
+static getDerivedStateFromProps()
+render()
+componentDidMount()
+
+Updating
+An update can be caused by changes to props or state. These methods are called in the following order when a component is being re-rendered:
+static getDerivedStateFromProps()
+shouldComponentUpdate()
+render()
+getSnapshotBeforeUpdate()
+componentDidUpdate()
+
+Unmounting
+This method is called when a component is being removed from the DOM:
+componentWillUnmount()
+
+
 4. Define stateful logic.
 
+As React developers, it’s important to understand everything we can do inside components. Up to this point, we’ve stored and managed data and we’ve rendered elements to the DOM. However, React component often hold a lot of logic as well. We’ve seen examples of this already, but in this module we’ll put a name to it and be able to recognize it so that we can later use it as a very powerful tool when we build React components.
+
+
 5. Describe how to test a React component with React Testing Library.
+
+The framework we use for testing is: arrange, act, assert. These are three steps that we can take to build good tests. First, we “arrange” our test by setting up our code such that it can be tested. Then, we “act” - calling a method or function that returns a result of interest to our test. Finally, with that return we “assert” if our expected return matched the actual return.
+Very often arrange and act will happen in the same line of code, for illustration here we’ve separated these sections, but don’t be scared if you see them together.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
